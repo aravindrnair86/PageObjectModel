@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Command line suite" duration-ms="59373" started-at="2019-09-26T03:44:51Z" finished-at="2019-09-26T03:45:51Z">
+  <suite name="Command line suite" duration-ms="63431" started-at="2019-09-26T17:25:20Z" finished-at="2019-09-26T17:26:24Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="59373" started-at="2019-09-26T03:44:51Z" finished-at="2019-09-26T03:45:51Z">
+    <test name="Command line test" duration-ms="63431" started-at="2019-09-26T17:25:20Z" finished-at="2019-09-26T17:26:24Z">
       <class name="com.invia.qa.testcases.HomePageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.invia.qa.testcases.HomePageTest@880ec60]" name="setUp" is-config="true" duration-ms="20580" started-at="2019-09-26T09:14:51Z" finished-at="2019-09-26T09:15:12Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="setUp" is-config="true" duration-ms="12419" started-at="2019-09-26T22:55:20Z" finished-at="2019-09-26T22:55:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="runTestScript()[pri:1, instance:com.invia.qa.testcases.HomePageTest@880ec60]" name="runTestScript" duration-ms="37753" started-at="2019-09-26T09:15:12Z" finished-at="2019-09-26T09:15:50Z">
+        <test-method status="PASS" signature="automatedTestScript()[pri:1, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="automatedTestScript" duration-ms="19973" started-at="2019-09-26T22:55:33Z" finished-at="2019-09-26T22:55:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runTestScript -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.invia.qa.testcases.HomePageTest@880ec60]" name="tearDown" is-config="true" duration-ms="1002" started-at="2019-09-26T09:15:50Z" finished-at="2019-09-26T09:15:51Z">
+        </test-method> <!-- automatedTestScript -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="tearDown" is-config="true" duration-ms="736" started-at="2019-09-26T22:55:53Z" finished-at="2019-09-26T22:55:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="setUp" is-config="true" duration-ms="11114" started-at="2019-09-26T22:55:53Z" finished-at="2019-09-26T22:56:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="selectHotelTest()[pri:2, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="selectHotelTest" duration-ms="18426" started-at="2019-09-26T22:56:04Z" finished-at="2019-09-26T22:56:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectHotelTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.invia.qa.testcases.HomePageTest@59a6e353]" name="tearDown" is-config="true" duration-ms="717" started-at="2019-09-26T22:56:23Z" finished-at="2019-09-26T22:56:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

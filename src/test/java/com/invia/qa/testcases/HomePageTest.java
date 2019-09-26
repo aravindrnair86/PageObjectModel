@@ -27,13 +27,21 @@ public class HomePageTest extends TestBase {
 	}
 
 	@Test(priority = 1)
-	public void runTestScript() throws InterruptedException {
+	public void automatedTestScript() throws InterruptedException {
+
 		String homePageTitle = homePage.verifyHomePageTitle();
 		Assert.assertEquals(homePageTitle, "Urlaub: Bis 40% Rabatt beim Marktführer | ab-in-den-urlaub.de");
-		homePage.automatedtestScript();
+		homePage.clickHotelCityMenu();
+		homePage.selectDestination();
+		homePage.fillCheckInCheckOut();
+		hotelSelectPage.selectStarAndReview();
+		hotelSelectPage.sortResultsByPrice();
+
 	}
 
+	@Test(priority = 2)
 	public void selectHotelTest() {
+		hotelSelectPage = homePage.selectHotel();
 		String hotelSelectPageTitle = hotelSelectPage.verifyHotelPageTitle();
 		Assert.assertEquals(hotelSelectPageTitle, "ab-in-den-urlaub.de");
 

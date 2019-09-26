@@ -16,6 +16,21 @@ public class HotelSelectPage extends TestBase {
 	TestUtil testUtil;
 	HomePage homePage;
 
+	@FindBy(xpath = "//span[@class='select-icon hc-icon-star-50']")
+	WebElement fiveStar;
+
+	@FindBy(xpath = "//span[@class='hc-icon-smiley-5 icon']")
+	WebElement reviewRating;
+
+	@FindBy(xpath = "//li[contains(text(),'Preis')]")
+	WebElement price;
+
+	@FindBy(xpath = "//span[@class='js-baseFrame-sort-icon activeIcon active changeDirection asc']")
+	WebElement asc;
+
+	@FindBy(xpath = "//li[@class='js-baseFrame-sortElement js-baseFrame-sort-icon active changeDirection desc']")
+	WebElement desc;
+
 	@FindBy(id = "//h2[@id='hotelname-0']")
 	WebElement firstHotel;
 
@@ -38,6 +53,27 @@ public class HotelSelectPage extends TestBase {
 
 	public String verifyHotelPageTitle() {
 		return driver.getTitle();
+	}
+
+	public void selectStarAndReview() {
+
+		testUtil.waitForElement(fiveStar);
+		testUtil.moveToElement(fiveStar);
+		fiveStar.click();
+		testUtil.waitForElement(reviewRating);
+		testUtil.moveToElement(reviewRating);
+		reviewRating.click();
+
+	}
+
+	public void sortResultsByPrice() {
+
+		testUtil.waitForElement(price);
+		price.click();
+		asc.isEnabled();
+		price.click();
+		desc.isEnabled();
+
 	}
 
 }

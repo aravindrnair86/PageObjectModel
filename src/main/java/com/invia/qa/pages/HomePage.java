@@ -46,21 +46,6 @@ public class HomePage extends TestBase {
 	@FindBy(id = "header")
 	WebElement header;
 
-	@FindBy(xpath = "//span[@class='select-icon hc-icon-star-50']")
-	WebElement fiveStar;
-
-	@FindBy(xpath = "//span[@class='hc-icon-smiley-5 icon']")
-	WebElement reviewRating;
-
-	@FindBy(xpath = "//li[contains(text(),'Preis')]")
-	WebElement price;
-
-	@FindBy(xpath = "//span[@class='js-baseFrame-sort-icon activeIcon active changeDirection asc']")
-	WebElement asc;
-
-	@FindBy(xpath = "//li[@class='js-baseFrame-sortElement js-baseFrame-sort-icon active changeDirection desc']")
-	WebElement desc;
-
 	// Initializing the Page Objects:
 	public HomePage() {
 		PageFactory.initElements(driver, this);
@@ -80,33 +65,28 @@ public class HomePage extends TestBase {
 		return new HotelSelectPage();
 	}
 
-	public void automatedtestScript() {
-
+	public void clickHotelCityMenu() {
 		testUtil.moveToElement(hotelCityLnk);
 		hotelCityLnk.click();
 		testUtil.clickOverlay(hotelCityLnk);
+		testUtil.waitForElement(textBox);
+	}
+
+	public void selectDestination() {
+
 		textBox.sendKeys(prop.getProperty("destination"));
 		testUtil.waitForElement(places);
 		textBox.sendKeys(Keys.ENTER);
 		checkInDateTxtBox.click();
 		testUtil.waitForElement(textBox);
+	}
+
+	public void fillCheckInCheckOut() {
 		testUtil.moveToElement(checkInDate);
 		checkInDate.click();
 		checkOutDate.click();
 		testUtil.moveToElement(textBox);
 		submitButton.click();
-		testUtil.waitForElement(fiveStar);
-		testUtil.moveToElement(fiveStar);
-		fiveStar.click();
-		testUtil.waitForElement(reviewRating);
-		testUtil.moveToElement(reviewRating);
-		reviewRating.click();
-		testUtil.waitForElement(price);
-		price.click();
-		asc.isEnabled();
-		price.click();
-		desc.isEnabled();
-
 	}
 
 }

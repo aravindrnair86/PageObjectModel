@@ -11,17 +11,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import com.invia.qa.util.TestUtil;
 
-
 public class TestBase {
-	
+
 	public static WebDriver driver;
 	public static Properties prop;
 
-	public TestBase(){
+	public TestBase() {
 		try {
 			prop = new Properties();
-			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/invia"
-					+ "/qa/config/config.properties");
+			FileInputStream ip = new FileInputStream(
+					System.getProperty("user.dir") + "/src/main/java/com/invia" + "/qa/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -29,23 +28,22 @@ public class TestBase {
 			e.printStackTrace();
 		}
 	}
-	
-public static void initialization(){
-	String browserName = prop.getProperty("browser");
-	
-	if(browserName.equals("chrome")){
-		System.setProperty("webdriver.chrome.driver", "C:/Users/user/Desktop/Selenium/chromedriver.exe");	
-		driver = new ChromeDriver(); 
+
+	public static void initialization() {
+		String browserName = prop.getProperty("browser");
+
+		if (browserName.equals("chrome")) {
+			System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+			driver = new ChromeDriver();
+		} else if (browserName.equals("FF")) {
+			System.setProperty("webdriver.gecko.driver", "./Drivers/geckodriver.exe");
+			driver = new FirefoxDriver();
+		}
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+
+		driver.get(prop.getProperty("url"));
 	}
-	else if(browserName.equals("FF")){
-		System.setProperty("webdriver.gecko.driver", ("user.dir")+ "POMTestProjectStructure/Drivers/geckodriver.exe");	
-		driver = new FirefoxDriver(); 
-	}
-	driver.manage().window().maximize();
-	driver.manage().deleteAllCookies();
-	driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-	driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-	
-	driver.get(prop.getProperty("url"));
-}
 }
