@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Invia Test Automation Test Suite]">
+  <test name="Invia sanity Test Cases(failed)">
+    <classes>
+      <class name="com.invia.qa.testcases.HotelSelectPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="searchOffersTest"/>
+        </methods>
+      </class> <!-- com.invia.qa.testcases.HotelSelectPageTest -->
+    </classes>
+  </test> <!-- Invia sanity Test Cases(failed) -->
+</suite> <!-- Failed suite [Invia Test Automation Test Suite] -->
